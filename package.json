@@ -1,30 +1,22 @@
 {
-<<<<<<< HEAD
   "name": "workspace",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
-  },
-  "private": true,
-  "devDependencies": {
-    "typescript": "~5.9.2",
-    "prettier": "^3.8.1"
-=======
-  "name": "skillswap-platform",
-  "version": "1.0.0",
-  "scripts": {
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
     "backend": "cd backend && venv\\Scripts\\activate && python app.py",
     "frontend": "cd client && npm run dev",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "seed": "cd backend && venv\\Scripts\\activate && python seed.py",
-    "install-all": "npm install && cd client && npm install && cd ../backend && python -m venv venv && venv\\Scripts\\activate && pip install -r requirements.txt"
+    "install-all": "pnpm install && cd client && npm install && cd ../backend && python -m venv venv && venv\\Scripts\\activate && pip install -r requirements.txt"
   },
   "devDependencies": {
+    "typescript": "~5.9.2",
+    "prettier": "^3.8.1",
     "concurrently": "^8.2.2"
->>>>>>> 494cb1c046fc17c8a018241d1dadb8057351bc2c
   }
 }

@@ -41,18 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Environment secrets (never commit)
-.env
-.env.*
-*.env
-!.env.example
-
-# Python
-__pycache__/
-*.py[cod]
-venv/
-.venv/
-
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
 
